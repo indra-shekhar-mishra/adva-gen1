@@ -1,2 +1,49 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>File Transfer — IndraX Cyber Tools</title><link rel="stylesheet" href="style.css"/><script defer src="main_file.js"></script></head><body><main class="ft-container"><h2>File Transfer</h2><p class="small">Upload any file type — files are stored locally in your browser (IndexedDB). You can download or delete later.</p><div class="upload-row"><input id="fileInput" type="file" multiple><button id="uploadBtn" class="btn btn-primary">Upload</button><button id="refreshBtn" class="btn btn-ghost">Refresh List</button><button id="clearAllBtn" class="btn btn-ghost" title="Clear all stored files">Clear All</button></div><div id="fileList" class="file-list" aria-live="polite"></div></main></body></html>
-
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>File Transfer — IndraX Cyber Tools</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main_file.js"></script>
+  <script defer src="main.js"></script>
+</head>
+<body><header>
+  <div class="page-center" style="text-align:center;">
+      <header class="toolbar" role="banner" style="margin-top:12px;">
+        <div class="logo">IndraX Cyber Tools</div>
+        <nav class="nav-links" role="navigation" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="encode.html">Code Text</a>
+          <a href="decode.html">Decode Text</a>
+          <a href="chat.html">Live Chat</a>
+          <a href="file.html">Emergency</a>
+        </nav>
+        <div class="clock" id="clock">00:00:00</div><p>  </p>
+      </header>
+  <main class="ft-container">
+    <h1>File Transfer</h1>
+    <p class="small">
+      Upload any file type — files are stored locally in your browser (IndexedDB). You can download or delete them later.
+    </p>
+    <section class="upload-section">
+      <div class="upload-row">
+        <label for="fileInput" class="file-label">Choose files to upload:</label>
+        <input id="fileInput" type="file" multiple />
+        <button id="uploadBtn" class="btn btn-primary">Upload</button>
+        <button id="refreshBtn" class="btn btn-ghost">Refresh List</button>
+        <button id="clearAllBtn" class="btn btn-ghost" title="Clear all stored files">Clear All</button>
+      </div>
+    </section>
+    <section class="file-list-section">
+      <h2>Uploaded Files</h2>
+      <div id="fileList" class="file-list" aria-live="polite">
+        <!-- Dynamically populated file list will appear here -->
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 IndraX Cyber Tools. All rights reserved.</p>
+  </footer>
+</body>
+</html>

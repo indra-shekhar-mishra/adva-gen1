@@ -1,2 +1,70 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Decode Text</title><link rel="stylesheet" href="style_code.css"/><script src="main_encode.js" defer></script></head><body><div class="toolbar"><div class="logo">IndraX Cyber Tools</div><div class="nav-links"><a href="index.html">Home</a><a href="encode.html">Code Text</a><a href="decode.html">Decode Text</a><a href="chat.html">Live Chat</a><a href="file.html">Future</a></div><div id="clock"></div></div><h2>AP Decoder</h2><textarea id="encodedText" rows="4" placeholder="Enter AP text to decode"></textarea><br><button onclick="decodeMessage()">Decode</button><button onclick="clearFields()">Clear</button><div class="output"><p>Decoded Message: <span id="decoded"></span></p></div></body></html>
+<!doctype html>
 <html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decode Text — IndraX Cyber Tools</title>
+  <link rel="stylesheet" href="style_code.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="main_encode.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body> <center>
+   <div class="page-center" style="text-align:center;">
+      <header class="toolbar" role="banner" style="margin-top:12px;">
+        <div class="logo">IndraX Cyber Tools</div>
+        <nav class="nav-links" role="navigation" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="encode.html">Code Text</a>
+          <a href="decode.html">Decode Text</a>
+          <a href="chat.html">Live Chat</a>
+          <a href="file.html">Emergency</a>
+        </nav>
+        <div class="clock" id="clock">00:00:00</div><p>  </p>
+      </header>
+  <main>
+    <h1>AP Decoder</h1>
+    <section class="decoder-section">
+      <label for="encodedText" class="textarea-label">Enter AP text to decode:</label>
+      <textarea id="encodedText" rows="6" placeholder="Type encoded text here..." aria-label="Encoded text input"></textarea>
+      <div class="button-group">
+        <button id="decodeBtn" class="btn btn-primary" onclick="decodeMessage()">Decode</button>
+        <button id="clearBtn" class="btn btn-secondary" onclick="clearFields()">Clear</button>
+      </div>
+    </section>
+    <section class="output-section">
+      <h2>Decoded Output</h2>
+      <p>Decoded Message: <span id="decoded" class="output-text"></span></p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 IndraX Cyber Tools. All rights reserved.</p>
+  </footer>
+  <script>
+    function decodeMessage() {
+      const input = document.getElementById("encodedText").value.trim();
+      if (!input) {
+        alert("Please enter text to decode.");
+        return;
+      }
+      // Example decoding logic (replace with actual decoding logic)
+      const decoded = input.split("").reverse().join(""); // Reverse the text as a placeholder
+      document.getElementById("decoded").textContent = decoded;
+    }
+
+    function clearFields() {
+      document.getElementById("encodedText").value = "";
+      document.getElementById("decoded").textContent = "";
+    }
+
+    // Clock functionality
+    function updateClock() {
+      const clock = document.getElementById("clock");
+      const now = new Date();
+      clock.textContent = now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script></center>
+</body>
+</html>

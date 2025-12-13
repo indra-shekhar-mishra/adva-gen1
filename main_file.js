@@ -199,4 +199,3 @@
     window._indra_files = { addFileEntry, listAllFiles, getFileById, deleteFileById, clearAll };
 
   })();
-
